@@ -15,6 +15,8 @@
 		18CF9AB31F61747900287A76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CF9AB11F61747900287A76 /* LaunchScreen.storyboard */; };
 		18CF9ABE1F61747900287A76 /* VideoDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9ABD1F61747900287A76 /* VideoDemoTests.m */; };
 		18CF9AC91F61747A00287A76 /* VideoDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9AC81F61747A00287A76 /* VideoDemoUITests.m */; };
+		18CF9AD81F6263E500287A76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CF9AD71F6263E500287A76 /* AVFoundation.framework */; };
+		18CF9ADB1F62641900287A76 /* VideoToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9ADA1F62641900287A76 /* VideoToolBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		18CF9AC41F61747A00287A76 /* VideoDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF9AC81F61747A00287A76 /* VideoDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoDemoUITests.m; sourceTree = "<group>"; };
 		18CF9ACA1F61747A00287A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18CF9AD71F6263E500287A76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18CF9AD91F62641900287A76 /* VideoToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoToolBar.h; sourceTree = "<group>"; };
+		18CF9ADA1F62641900287A76 /* VideoToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoToolBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CF9AD81F6263E500287A76 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 				18CF9ABC1F61747900287A76 /* VideoDemoTests */,
 				18CF9AC71F61747A00287A76 /* VideoDemoUITests */,
 				18CF9AA11F61747900287A76 /* Products */,
+				18CF9AD61F6263E500287A76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,8 @@
 				18CF9AA71F61747900287A76 /* AppDelegate.m */,
 				18CF9AA91F61747900287A76 /* ViewController.h */,
 				18CF9AAA1F61747900287A76 /* ViewController.m */,
+				18CF9AD91F62641900287A76 /* VideoToolBar.h */,
+				18CF9ADA1F62641900287A76 /* VideoToolBar.m */,
 				18CF9AAC1F61747900287A76 /* Main.storyboard */,
 				18CF9AAF1F61747900287A76 /* Assets.xcassets */,
 				18CF9AB11F61747900287A76 /* LaunchScreen.storyboard */,
@@ -138,6 +147,14 @@
 				18CF9ACA1F61747A00287A76 /* Info.plist */,
 			);
 			path = VideoDemoUITests;
+			sourceTree = "<group>";
+		};
+		18CF9AD61F6263E500287A76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18CF9AD71F6263E500287A76 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +296,7 @@
 				18CF9AAB1F61747900287A76 /* ViewController.m in Sources */,
 				18CF9AA81F61747900287A76 /* AppDelegate.m in Sources */,
 				18CF9AA51F61747900287A76 /* main.m in Sources */,
+				18CF9ADB1F62641900287A76 /* VideoToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +538,7 @@
 				18CF9ACF1F61747A00287A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18CF9AD01F61747A00287A76 /* Build configuration list for PBXNativeTarget "VideoDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +547,7 @@
 				18CF9AD21F61747A00287A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18CF9AD31F61747A00287A76 /* Build configuration list for PBXNativeTarget "VideoDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +556,7 @@
 				18CF9AD51F61747A00287A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
