@@ -8,6 +8,15 @@
 
 #import "MDHVideoDataModel.h"
 
+
+@interface MDHVideoDataModel ()
+
+@property (nonatomic, assign) CGFloat lastValue;  // 判断快进 or 快退
+
+@end
+
+
+
 @implementation MDHVideoDataModel
 
 
@@ -29,11 +38,12 @@
     self = [super init];
     if (self) {
     
+       
+
     }
     
     return  self;
 }
-
 
 
 
@@ -44,15 +54,15 @@
     // 当前时间格式 按照 总时间来判断（如果总时间超过1小时，那么当前时间要00:01:00）
     if (self.totalSecond < 3600) {
     
-        NSInteger min = self.currentSecond / 60; // 分钟
-        NSInteger sec = self.currentSecond % 60; // 秒
+        NSInteger min = (NSInteger)self.currentSecond / 60; // 分钟
+        NSInteger sec = (NSInteger)self.currentSecond % 60; // 秒
         string        = [NSString stringWithFormat:@"%02zd:%02zd", min, sec];
         
     } else {
     
-        NSInteger hou = self.currentSecond / 3600; // 小时
-        NSInteger min = self.currentSecond / 60;   // 分钟
-        NSInteger sec = self.currentSecond % 60;   // 秒
+        NSInteger hou = (NSInteger)self.currentSecond / 3600; // 小时
+        NSInteger min = (NSInteger)self.currentSecond / 60;   // 分钟
+        NSInteger sec = (NSInteger)self.currentSecond % 60;   // 秒
         string        = [NSString stringWithFormat:@"%02zd:%02zd:%02zd",hou, min, sec];
     }
     
@@ -65,15 +75,15 @@
     
     if (self.totalSecond < 3600) {
         
-        NSInteger min = self.totalSecond / 60; // 分钟
-        NSInteger sec = self.totalSecond % 60; // 秒
+        NSInteger min = (NSInteger)self.totalSecond / 60; // 分钟
+        NSInteger sec = (NSInteger)self.totalSecond % 60; // 秒
         string        = [NSString stringWithFormat:@"%02zd:%02zd", min, sec];
         
     } else {
         
-        NSInteger hou = self.totalSecond / 3600; // 小时
-        NSInteger min = self.totalSecond / 60;   // 分钟
-        NSInteger sec = self.totalSecond % 60;   // 秒
+        NSInteger hou = (NSInteger)self.totalSecond / 3600; // 小时
+        NSInteger min = (NSInteger)self.totalSecond / 60;   // 分钟
+        NSInteger sec = (NSInteger)self.totalSecond % 60;   // 秒
         string        = [NSString stringWithFormat:@"%02zd:%02zd:%02zd",hou, min, sec];
     }
     
@@ -87,7 +97,17 @@
 
 - (CGFloat)progress {
 
-    return self.currentSecond / self.totalSecond;
+    CGFloat temp = (CGFloat)self.currentSecond / self.totalSecond;
+    return temp;
 }
+
+- (BOOL)isForward {
+    
+    BOOL temp      = (self.currentSecond >= self.lastValue) ? YES : NO;
+    self.lastValue = self.currentSecond;
+
+    return temp;
+}
+
 
 @end

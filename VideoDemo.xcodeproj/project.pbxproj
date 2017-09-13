@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1894E20D1F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E2091F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 */; };
+		1894E20E1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E20A1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 */; };
+		1894E20F1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E20B1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 */; };
+		1894E2101F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E20C1F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 */; };
 		18C5F5DA1F6672EB00DDA4D1 /* test_Video_0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F5D91F6672EB00DDA4D1 /* test_Video_0.mp4 */; };
 		18C5F5F91F6768F100DDA4D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F5DF1F6768F100DDA4D1 /* Info.plist */; };
 		18C5F5FA1F6768F100DDA4D1 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5E11F6768F100DDA4D1 /* MASCompositeConstraint.m */; };
@@ -69,6 +73,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1894E2091F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_carat.mp4; sourceTree = "<group>"; };
+		1894E20A1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_clarity.mp4; sourceTree = "<group>"; };
+		1894E20B1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_color.mp4; sourceTree = "<group>"; };
+		1894E20C1F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_cut.mp4; sourceTree = "<group>"; };
 		18C5F5D91F6672EB00DDA4D1 /* test_Video_0.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_Video_0.mp4; sourceTree = "<group>"; };
 		18C5F5DF1F6768F100DDA4D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C5F5E01F6768F100DDA4D1 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -271,6 +279,10 @@
 				18C5F6041F6768FE00DDA4D1 /* AFNetworking */,
 				18C5F5DE1F6768F100DDA4D1 /* Masonry */,
 				18C5F5D91F6672EB00DDA4D1 /* test_Video_0.mp4 */,
+				1894E2091F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 */,
+				1894E20A1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 */,
+				1894E20B1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 */,
+				1894E20C1F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 */,
 				18683D8E1F6639C200CBE9D2 /* Resource */,
 				18CF9AA61F61747900287A76 /* AppDelegate.h */,
 				18CF9AA71F61747900287A76 /* AppDelegate.m */,
@@ -440,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C5F5DA1F6672EB00DDA4D1 /* test_Video_0.mp4 in Resources */,
+				1894E2101F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 in Resources */,
 				18C5F62A1F676C7B00DDA4D1 /* mdh_video_tool_shrinkscreen.png in Resources */,
 				18C5F6251F676C7B00DDA4D1 /* mdh_video_tool_fullscreen.png in Resources */,
 				18C5F6291F676C7B00DDA4D1 /* mdh_video_tool_replayBtn.png in Resources */,
@@ -449,8 +462,11 @@
 				18CF9AB01F61747900287A76 /* Assets.xcassets in Resources */,
 				18C5F6241F676C7B00DDA4D1 /* mdh_video_tool_forwardImage.png in Resources */,
 				18C5F6261F676C7B00DDA4D1 /* mdh_video_tool_pauseBtn.png in Resources */,
+				1894E20F1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 in Resources */,
+				1894E20D1F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 in Resources */,
 				18C5F5F91F6768F100DDA4D1 /* Info.plist in Resources */,
 				18C5F62B1F676C7B00DDA4D1 /* mdh_video_tool_StartPlay.png in Resources */,
+				1894E20E1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 in Resources */,
 				18C5F6281F676C7B00DDA4D1 /* mdh_video_tool_playBtn.png in Resources */,
 				18CF9AAE1F61747900287A76 /* Main.storyboard in Resources */,
 			);

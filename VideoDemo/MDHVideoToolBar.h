@@ -27,13 +27,17 @@
 
 @optional
 
+//playButton 播放、暂停
 - (void)MDHVideoToolBar:(MDHVideoToolBar *)videoToolBar play:(BOOL)play;
+//slider 开始拖动
+- (void)MDHVideoToolBarBeginDragSlider:(MDHVideoToolBar *)videoToolBar;
+//slider 正在拖动
+- (void)MDHVideoToolBarDragingSlider:(MDHVideoToolBar *)videoToolBar;
+//slider 停止拖动
+- (void)MDHVideoToolBarFinishDragSlider:(MDHVideoToolBar *)videoToolBar;
+//fullScreenButton 全屏
+- (void)MDHVideoToolBarFullScreen:(MDHVideoToolBar *)videoToolBar;
 
-
-//- (void)videoToolBarSliderDidDraging:(MDHVideoToolBar *)videoToolBar;
-//- (void)videoToolBar:(MDHVideoToolBar *)videoToolBar changeVideoStatus:(BOOL)play;
-//- (void)videoToolBar:(MDHVideoToolBar *)videoToolBar seekToTime:(CGFloat)skipTime;
-//- (void)videoToolBar:(MDHVideoToolBar *)videoToolBar switchScreen:(BOOL)fullScreen;
 
 @end
 
@@ -41,27 +45,36 @@
 
 @interface MDHVideoToolBar : UIView
 
-
-
-@property (nonatomic, strong) UIButton         *playBtn;              // 播放/暂停按钮
-@property (nonatomic, strong) UILabel          *currentTimeLabel;     // 当前播放时间
-@property (nonatomic, strong) UILabel          *totalTimeLabel;       // 视频总时长
-@property (nonatomic, strong) UIProgressView   *bufferProgressView;   // 缓冲进度条
-@property (nonatomic, strong) UISlider         *slider;               // 滑竿
-@property (nonatomic, strong) UIButton         *fullScreenBtn;        // 全屏
-
-@property (nonatomic, assign) CGFloat          totalDuration;          // 总时长，单位 s
-@property (nonatomic, assign) BOOL             draging;                // 是否正在拖动
-@property (nonatomic, assign) BOOL             playing;                // 是否正在播放
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-
 @property (nonatomic, weak) id <MDHVideoToolBarDelegate> customDelegate;
+@property (nonatomic, assign) CGFloat sliderValue; // slider 当前值
 
 
-
+/**
+ *  更新总时长
+ *
+ *  @param totalTime          总时长（单位秒）
+ *  @param timeString         总时长格式字符串
+ *
+ */
 - (void)updateTotalTime:(CGFloat)totalTime timeString:(NSString *)timeString;
+
+
+/**
+ *  更新当前播放时长
+ *
+ *  @param currentTime        当前播放时长（单位秒）
+ *  @param timeString         当前播放时长格式字符串
+ *
+ */
 - (void)updateCurrentTime:(CGFloat)currentTime timeString:(NSString *)timeString;
 
+
+/**
+ *   更新缓冲进度
+ *
+ *  @param progress        更新缓冲进度
+ *
+ */
 - (void)updateBufferProgress:(CGFloat)progress;
 
 

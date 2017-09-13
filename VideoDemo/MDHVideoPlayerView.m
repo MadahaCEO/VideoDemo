@@ -26,16 +26,15 @@
 @property (nonatomic, strong) AVPlayerLayer  *playerLayer;
 @property (nonatomic, strong) NSObject       *playbackTimeObserver;
 
-//@property (nonatomic, strong) UIImageView                *coverPlanImageView;
 
 @property (nonatomic, assign) BOOL playing;
 @property (nonatomic, assign) BOOL canDrag;
 @property (nonatomic, assign) BOOL toobBarValid;
 
+//@property (nonatomic, assign) BOOL toobBarValid;
+
 
 @property (nonatomic, strong) MDHVideoControlView  *videoControlView;
-//
-//@property (nonatomic, strong) VideoToolBar  *bottomToolbar;
 
 
 @end
@@ -95,8 +94,6 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
         }
         
         if (videoURL) {
-            
-            [self coverImageWithVideoAddress:urlString];
             
             self.urlAsset    = [AVURLAsset assetWithURL:videoURL];
             self.playerItem  = [AVPlayerItem playerItemWithAsset:self.urlAsset];
@@ -212,7 +209,7 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
     
 //    [self.indicatorView startAnimating];
     
-    NSLog(@" \n\n视频卡顿  \n\n");
+    NSLog(@" \n\n\n\n ********************视频卡顿********************  \n\n\n\n");
 }
 
 /** 声音线路改变
@@ -274,12 +271,10 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
     AVPlayerItem *item = (AVPlayerItem *)object;
     
     if ([keyPath isEqualToString: KObserverKeyPath_Status]) {
-        if (item.status == AVPlayerStatusReadyToPlay) {
+        if (item.status == AVPlayerItemStatusReadyToPlay) {
             
-            [self.videoControlView readyToPlay: YES];
-            
-            NSInteger durationSeconds = CMTimeGetSeconds(item.duration);
-            NSLog(@" \n\n视频总时间  %ld\n\n",(long)durationSeconds);
+            CGFloat durationSeconds = CMTimeGetSeconds(item.duration);
+            NSLog(@" \n\n视频总时间  %f\n\n",durationSeconds);
             [MDHVideoDataModel sharedInstance].totalSecond   = durationSeconds;
             [self.videoControlView updateTotalTime];
             
@@ -289,95 +284,56 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
                                                                              usingBlock:^(CMTime time) {
                                                                                
                                                                                  [weakSelf monitoringPlayback:item];
-            
-//                                                                                                                                                                                                                                     NSLog(@"当前在第几秒 ： %lld",item.currentTime.value/item.timescale);
-                                                                                 
-                                                                                 //                                                                         [weakSelf.bottomToolbar updatePlayProgress:item.currentTime.value/item.currentTime.timescale];
                                                                                  
                                                                              }];
 
             
-        } else if (item.status == AVPlayerStatusFailed ||
-                   item.status == AVPlayerStatusUnknown) {
+        } else if (item.status == AVPlayerItemStatusFailed ||
+                   item.status == AVPlayerItemStatusUnknown) {
             
-            NSLog(@" \n\n视频获取失败\n\n");
-
+            [self.videoControlView stopAnimating];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"视频播放失败"
+                                                            message: item.error.description
+                                                           delegate: nil
+                                                  cancelButtonTitle: @"退出"
+                                                  otherButtonTitles: nil];
+            [alert show];
         }
-        
-    } else if ([keyPath isEqualToString: KObserverKeyPath_LoadedTimeRanges]) {  //监听播放器的下载进度
+    } else if ([keyPath isEqualToString: KObserverKeyPath_LoadedTimeRanges]) {  //监听播放器的缓冲进度
         
         [self calculateDownloadProgress:item];
         
-    } else if ([keyPath isEqualToString: KObserverKeyPath_PlaybackBufferEmpty]) { //监听播放器在缓冲数据的状态
+    } else if ([keyPath isEqualToString: KObserverKeyPath_PlaybackBufferEmpty]) { // 没有足够缓冲播放
         
+        NSLog(@"缓冲不足暂停了");
+        [self.videoControlView startAnimating];
+
         if (item.isPlaybackBufferEmpty) {
             
             [self bufferingSomeSecond];
         }
     } else if ([keyPath isEqualToString: KObserverKeyPath_PlaybackLikelyToKeepUp]) {
         
-        
-        NSLog(@" \n playbackLikelyToKeepUp\n\n");
-        
+        if (item.playbackLikelyToKeepUp){
+            NSLog(@"缓冲达到可播放程度了");
+
+            NSLog(@" \n\n\n\n ********************playbackLikelyToKeepUp********************  \n\n\n\n");
+            if (![MDHVideoDataModel sharedInstance].alreadyPlay && [MDHVideoDataModel sharedInstance].bufferProgress > 0.1) {
+                
+                [self.videoControlView readyToPlay: YES];
+            }
+
+            [self.videoControlView stopAnimating];
+
+        }
+
     }
 }
 
 
 
-
 #pragma mark - Helper
-
-/**/
-- (void)coverImageWithVideoAddress:(NSString *)urlString {
-    
-    __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        NSURL *url=[NSURL URLWithString: urlString];
-        
-        //根据url创建AVURLAsset
-        AVURLAsset *urlAsset=[AVURLAsset assetWithURL:url];
-        //根据AVURLAsset创建AVAssetImageGenerator
-        AVAssetImageGenerator *imageGenerator=[AVAssetImageGenerator assetImageGeneratorWithAsset:urlAsset];
-        
-        // 如果不设定，可能会在视频选中90、180、270°时，获取到的缩略图也是旋转的。
-        imageGenerator.appliesPreferredTrackTransform = YES;
-        
-        /*截图
-         * requestTime:缩略图创建时间
-         * actualTime:缩略图实际生成的时间
-         */
-        NSError *error=nil;
-        
-        /* CMTime是表示电影时间信息的结构体，
-           第一个参数表示是视频第几秒，
-           第二个参数表示每秒帧数.(如果要活的某一秒的第几帧可以使用CMTimeMake方法)
-         */
-        CMTime time = CMTimeMakeWithSeconds(1, 1);
-        CMTime actualTime;
-        CGImageRef cgImage= [imageGenerator copyCGImageAtTime: time
-                                                   actualTime: &actualTime
-                                                        error: &error];
-        if(error){
-            NSLog(@"截取视频缩略图时发生错误，错误信息：%@",error.localizedDescription);
-            return;
-        }
-//        CMTimeShow(actualTime);
-        UIImage *image=[UIImage imageWithCGImage:cgImage];//转化为UIImage
-        //保存到相册
-        //    UIImageWriteToSavedPhotosAlbum(image,nil, nil, nil);
-        CGImageRelease(cgImage);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-//            weakSelf.coverPlanImageView.image = image;
-            
-        });
-    });
-    
-}
-
-
 
 - (void)monitoringPlayback:(AVPlayerItem *)item {
   
@@ -386,10 +342,8 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
 
     [self.videoControlView updateCurrentTime];
     
-    NSLog(@" \n\n视频每秒监听  %f\n\n",currentSec);
-
+//    NSLog(@" \n\n视频每秒监听  %f\n\n",currentSec);
 }
-
 
 
 - (void)calculateDownloadProgress:(AVPlayerItem *)playerItem {
@@ -401,45 +355,34 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
     NSTimeInterval timeInterval = startSeconds + durationSeconds;// 计算缓冲总进度
     CMTime duration = playerItem.duration;
     CGFloat totalDuration = CMTimeGetSeconds(duration);
-    //    self.loadedProgress = timeInterval / totalDuration;
-    //    [self.videoProgressView setProgress:timeInterval / totalDuration animated:YES];
     
-    NSLog(@"\n\n缓冲进度  %f\n\n",timeInterval / totalDuration);
+    CGFloat progress = timeInterval / totalDuration;
+    [MDHVideoDataModel sharedInstance].bufferProgress = progress;
     
-//    [self.bottomToolbar updateBufferProgress:timeInterval / totalDuration];
+    if (![MDHVideoDataModel sharedInstance].alreadyPlay && progress > 0.1) {
+        
+        [self.videoControlView readyToPlay: YES];
+    }
+    
+    [self.videoControlView updateBufferProgress:timeInterval / totalDuration];
 }
 
 
-- (void)bufferingSomeSecond
-{
-    // playbackBufferEmpty会反复进入，因此在bufferingOneSecond延时播放执行完之前再调用bufferingSomeSecond都忽略
-    //    static BOOL isBuffering = NO;
-    //    if (isBuffering) {
-    //        return;
-    //    }
-    //    isBuffering = YES;
-    
+- (void)bufferingSomeSecond {
+   
     self.playing = NO;
-//    [self.indicatorView startAnimating];
-    
+    [self.videoControlView startAnimating];
+
     // 需要先暂停一小会之后再播放，否则网络状况不好的时候时间在走，声音播放不出来
     [self.player pause];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        //        // 如果此时用户已经暂停了，则不再需要开启播放了
-        //        if (self.isPauseByUser) {
-        //            isBuffering = NO;
-        //            return;
-        //        }
-        
         
         // 如果执行了play还是没有播放则说明还没有缓存好，则再次缓存一段时间
         //        isBuffering = NO;
         if (self.playerItem.isPlaybackLikelyToKeepUp) {
             
             [self.player play];
-//            [self.indicatorView stopAnimating];
-            
+            [self.videoControlView stopAnimating];
             
         } else {
             
@@ -457,18 +400,64 @@ static NSString * const KObserverKeyPath_PlaybackLikelyToKeepUp  = @"playbackLik
 
     if (play) {
         
+        [MDHVideoDataModel sharedInstance].alreadyPlay = YES;
         [self.player play];
         
     } else {
         
         [self.player pause];
-
     }
-    
-    if (controlView.firstPlay) {
-        
-           }
 }
+
+- (void)MDHVideoControlViewRePlay:(MDHVideoControlView *)controlView {
+    
+//    [self.videoControlView startAnimating];
+//    [self.player pause];
+//
+//    __weak typeof(self) weakSelf = self;
+//    
+//    [self.player seekToTime: CMTimeMake(0, 1)
+//            toleranceBefore: CMTimeMake(1,1)
+//             toleranceAfter: CMTimeMake(1,1)
+//          completionHandler: ^(BOOL finished) {
+//              
+//              if (weakSelf.playerItem.isPlaybackLikelyToKeepUp) {
+//                  
+//                  [weakSelf.player play];
+//                  [weakSelf.videoControlView stopAnimating];
+//              }
+//          }];
+}
+
+- (void)MDHVideoControlView:(MDHVideoControlView *)controlView seekToTime:(CGFloat)skipTime {
+
+    [self.videoControlView startAnimating];
+    [self.player pause];
+    
+    NSLog(@"开始跳转播放");
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [self.player seekToTime: CMTimeMake(skipTime, 1)
+            toleranceBefore: CMTimeMake(1,1)
+             toleranceAfter: CMTimeMake(1,1)
+          completionHandler: ^(BOOL finished) {
+        
+              if (weakSelf.playerItem.isPlaybackLikelyToKeepUp) {
+                  
+                  NSLog(@"跳转完成启动播放");
+
+                  [weakSelf.player play];
+                  [weakSelf.videoControlView stopAnimating];
+              }
+    }];
+}
+
+- (void)MDHVideoControlViewFullScreen:(MDHVideoControlView *)controlView {
+
+
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

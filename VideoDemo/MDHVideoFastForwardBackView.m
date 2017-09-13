@@ -12,7 +12,6 @@
 
 @interface MDHVideoFastForwardBackView ()
 
-@property (nonatomic, assign) CGFloat lastSecond;  // 判断快进 or 快退
 
 
 @end
@@ -70,18 +69,17 @@ static const CGFloat KControlPadding       = 10; // 间隔 10
 
 #pragma mark - For outer
 
-- (void)currentProgress:(CGFloat)progress alertTime:(NSString *)alertTime {
-    
-    if (progress > self.lastSecond ||
-        progress == self.lastSecond) {
-        NSLog(@"快进");
+- (void)updateImage:(BOOL)forward
+           progress:(CGFloat)progress
+          alertTime:(NSString *)alertTime {
+
+    if (forward) {
+//        NSLog(@"快进");
         self.alertImageView.image = [UIImage imageNamed:@"mdh_video_tool_forwardImage"];
     } else {
-        NSLog(@"快退");
+//        NSLog(@"快退");
         self.alertImageView.image = [UIImage imageNamed:@"mdh_video_tool_backImage"];
     }
-    
-    self.lastSecond = progress;
     
     self.alertLabel.text       = alertTime;
     self.progressView.progress = progress;

@@ -12,6 +12,13 @@
 
 @interface MDHVideoToolBar ()
 
+@property (nonatomic, strong) UIButton         *playBtn;              // 播放/暂停按钮
+@property (nonatomic, strong) UILabel          *currentTimeLabel;     // 当前播放时间
+@property (nonatomic, strong) UILabel          *totalTimeLabel;       // 视频总时长
+@property (nonatomic, strong) UIProgressView   *bufferProgressView;   // 缓冲进度条
+@property (nonatomic, strong) UISlider         *slider;               // 滑竿
+@property (nonatomic, strong) UIButton         *fullScreenBtn;        // 全屏
+@property (nonatomic, assign) BOOL             draging;                // 是否正在拖动
 
 @end
 
@@ -38,7 +45,7 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor clearColor];
         
         [self addSubview: self.playBtn];
         [self addSubview: self.currentTimeLabel];
@@ -112,14 +119,6 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
 
 #pragma mark - Layz load
 
-- (NSDateFormatter *)dateFormatter {
-    if (!_dateFormatter) {
-        _dateFormatter = [[NSDateFormatter alloc] init];
-    }
-    return _dateFormatter;
-}
-
-
 - (UIButton *)playBtn {
     
     if (!_playBtn) {
@@ -142,8 +141,8 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
     if (!_currentTimeLabel) {
         
         _currentTimeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _currentTimeLabel.backgroundColor = [UIColor grayColor];
-        _currentTimeLabel.text = @"asdfasdf";
+        _currentTimeLabel.backgroundColor = [UIColor clearColor];
+        _currentTimeLabel.textColor = [UIColor whiteColor];
     }
     
     return _currentTimeLabel;
@@ -157,7 +156,8 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
         // slider 默认高度 2
         _bufferProgressView = [[UIProgressView alloc] initWithFrame:CGRectZero];
         _bufferProgressView.progressViewStyle = UIProgressViewStyleDefault;
-        _bufferProgressView.progressTintColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
+//        _bufferProgressView.progressTintColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
+        _bufferProgressView.progressTintColor = [UIColor redColor];
         _bufferProgressView.trackTintColor    = [UIColor clearColor];
         
     }
@@ -174,13 +174,16 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
         _slider.minimumTrackTintColor = [UIColor whiteColor];
         _slider.maximumTrackTintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
         [_slider addTarget: self
-                    action: @selector(dragSlider)
+                    action: @selector(beginDragSlider:)
+          forControlEvents: UIControlEventTouchDown];
+        [_slider addTarget: self
+                    action: @selector(dragingSlider:)
           forControlEvents: UIControlEventValueChanged];
         [_slider addTarget: self
-                    action: @selector(skipToTime:)
+                    action: @selector(endDragSlider:)
           forControlEvents: UIControlEventTouchUpInside];
         [_slider addTarget: self
-                    action: @selector(skipToTime:)
+                    action: @selector(endDragSlider:)
           forControlEvents: UIControlEventTouchUpOutside];
         _slider.value = 0;
     }
@@ -194,8 +197,8 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
     if (!_totalTimeLabel) {
         
         _totalTimeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _totalTimeLabel.backgroundColor = [UIColor grayColor];
-        _totalTimeLabel.text = @"xxxxxx";
+        _totalTimeLabel.backgroundColor = [UIColor clearColor];
+        _totalTimeLabel.textColor = [UIColor whiteColor];
     }
     
     return _totalTimeLabel;
@@ -235,11 +238,10 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
 - (void)fullScreenBtnClick:(UIButton *)sender {
     sender.selected = !sender.selected;
     
-//    if (MDHDelegateCallback(self.customDelegate, @selector(videoToolBar:switchScreen:))) {
-//        
-//        [self.customDelegate videoToolBar: self
-//                             switchScreen: YES];
-//    }
+    if (MDHDelegateCallback(self.customDelegate, @selector(MDHVideoToolBarFullScreen:))) {
+        
+        [self.customDelegate MDHVideoToolBarFullScreen: self];
+    }
 }
 
 
@@ -251,7 +253,6 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
 
 - (void)updateTotalTime:(CGFloat)totalTime timeString:(NSString *)timeString {
     
-//    self.totalDuration = totalTime;
     self.totalTimeLabel.text = timeString;
     
     self.slider.minimumValue = 0;
@@ -264,52 +265,59 @@ static const CGFloat KControlPadding  = 10; // 各个控件 间隔 10
         
     } else {
         
-        self.playing = YES;
-        
         self.slider.value = currentTime;
-        
-        self.currentTimeLabel.text = timeString;
     }
+    
+    self.currentTimeLabel.text = timeString;
 }
 
 
 - (void)updateBufferProgress:(CGFloat)progress {
     
-    self.bufferProgressView.progress = progress;
-    
-}
+    NSLog(@"\n\n缓冲进度  %f\n\n",progress);
 
+    self.bufferProgressView.progress = progress;
+}
 
 
 
 #pragma mark - Slider method
 
-- (void)dragSlider {
+- (void)beginDragSlider:(UISlider *)control {
+    NSLog(@"接触、开始拖动slider");
+
+    if (MDHDelegateCallback(self.customDelegate, @selector(MDHVideoToolBarBeginDragSlider:))) {
+        
+        [self.customDelegate MDHVideoToolBarBeginDragSlider: self];
+    }
+}
+
+- (void)dragingSlider:(UISlider *)control {
     
     NSLog(@"正在拖动slider");
     
-//    self.currentTimeLabel.text = [self convertTime: self.slider.value];
+    self.draging     = YES;
+    self.sliderValue = control.value;
     
-//    if (MDHDelegateCallback(self.customDelegate, @selector(videoToolBarSliderDidDraging:))) {
-//        
-//        [self.customDelegate videoToolBarSliderDidDraging: self];
-//    }
+    if (MDHDelegateCallback(self.customDelegate, @selector(MDHVideoToolBarDragingSlider:))) {
+        
+        [self.customDelegate MDHVideoToolBarDragingSlider: self];
+    }
     
-    self.draging = YES;
 }
 
-- (void)skipToTime:(UISlider *)control {
+- (void)endDragSlider:(UISlider *)control {
     
     NSLog(@"停止拖动slider");
-    
+    self.sliderValue = control.value;
+
     self.draging = NO;
     
-//    if (MDHDelegateCallback(self.customDelegate, @selector(videoToolBar:seekToTime:))) {
-//        
-//        [self.customDelegate videoToolBar: self
-//                               seekToTime: control.value];
-//        
-//    }
+    if (MDHDelegateCallback(self.customDelegate, @selector(MDHVideoToolBarFinishDragSlider:))) {
+        
+        [self.customDelegate MDHVideoToolBarFinishDragSlider: self];
+        
+    }
 }
 
 

@@ -36,7 +36,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"test_Video_0" ofType:@"mp4"];
+//    NSString *path = [[NSBundle mainBundle]pathForResource:@"Tool_Public_GIA_carat" ofType:@"mp4"];
+    NSString *path = @"http://flv3.bn.netease.com/videolib3/1709/05/nvGOU4436/SD/nvGOU4436-mobile.mp4";
 
     CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 400);
     MDHVideoPlayerView *playerView = [[MDHVideoPlayerView alloc] initWithFrame: rect

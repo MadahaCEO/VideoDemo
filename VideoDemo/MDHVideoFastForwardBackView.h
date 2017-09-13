@@ -31,18 +31,21 @@
 @interface MDHVideoFastForwardBackView : UIView
 
 
-@property (nonatomic, strong) UIProgressView *progressView;
-@property (nonatomic, strong) UILabel        *alertLabel;
-@property (nonatomic, strong) UIImageView    *alertImageView;
+@property (nonatomic, strong) UIProgressView *progressView;    // 进度
+@property (nonatomic, strong) UILabel        *alertLabel;      // 时间
+@property (nonatomic, strong) UIImageView    *alertImageView;  // 提示图
 
 
 /**
  *  快进、快退提示View
  *
- *  @param progress          进度条value
- *  @param alertTime         播放时间
+ *  @param forward          是否快进
+ *  @param progress         进度条value
+ *  @param alertTime        快进或退格式字符串
  *
  */
-- (void)currentProgress:(CGFloat)progress alertTime:(NSString *)alertTime;
+- (void)updateImage:(BOOL)forward
+           progress:(CGFloat)progress
+          alertTime:(NSString *)alertTime;
 
 @end
