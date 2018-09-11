@@ -7,17 +7,36 @@
 //
 
 #import "ViewController.h"
-
-#import "MDHVideoPlayerView.h"
-
-
+#import "PlayerViewController.h"
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UILabel   *currentTimeLabel;     // 当前播放时间
 
 @end
 
+
+
 @implementation ViewController
+
+
+
+- (UILabel *)currentTimeLabel {
+    
+    if (!_currentTimeLabel) {
+        
+        _currentTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height)];
+        _currentTimeLabel.backgroundColor = [UIColor whiteColor];
+        _currentTimeLabel.textColor = [UIColor blackColor];
+        _currentTimeLabel.textAlignment = NSTextAlignmentCenter;
+        _currentTimeLabel.text = @"点一下，看视频。";
+        _currentTimeLabel.font = [UIFont systemFontOfSize:30.0];
+    }
+    
+    return _currentTimeLabel;
+}
+
+
 
 
 - (void)dealloc {
@@ -35,24 +54,20 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self.view addSubview:self.currentTimeLabel];
     
-//    NSString *path = [[NSBundle mainBundle]pathForResource:@"Tool_Public_GIA_carat" ofType:@"mp4"];
-    NSString *path = @"http://flv3.bn.netease.com/videolib3/1709/05/nvGOU4436/SD/nvGOU4436-mobile.mp4";
-
-    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 400);
-    MDHVideoPlayerView *playerView = [[MDHVideoPlayerView alloc] initWithFrame: rect
-                                                                  videoAddress: path];
     
-    [self.view addSubview:playerView];
-
-   
 }
 
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    PlayerViewController *playerVC = [[PlayerViewController alloc] init];
+//    [self presentViewController:playerVC animated:YES completion:nil];
+    [self.navigationController pushViewController:playerVC animated:YES];
 
+}
 
-
-#pragma mark - Layz load
 
 
 

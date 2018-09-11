@@ -7,42 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1894E20D1F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E2091F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 */; };
-		1894E20E1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E20A1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 */; };
-		1894E20F1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E20B1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 */; };
-		1894E2101F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1894E20C1F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 */; };
-		18C5F5DA1F6672EB00DDA4D1 /* test_Video_0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F5D91F6672EB00DDA4D1 /* test_Video_0.mp4 */; };
-		18C5F5F91F6768F100DDA4D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F5DF1F6768F100DDA4D1 /* Info.plist */; };
-		18C5F5FA1F6768F100DDA4D1 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5E11F6768F100DDA4D1 /* MASCompositeConstraint.m */; };
-		18C5F5FB1F6768F100DDA4D1 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5E41F6768F100DDA4D1 /* MASConstraint.m */; };
-		18C5F5FC1F6768F100DDA4D1 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5E61F6768F100DDA4D1 /* MASConstraintMaker.m */; };
-		18C5F5FD1F6768F100DDA4D1 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5E81F6768F100DDA4D1 /* MASLayoutConstraint.m */; };
-		18C5F5FE1F6768F100DDA4D1 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5EC1F6768F100DDA4D1 /* MASViewAttribute.m */; };
-		18C5F5FF1F6768F100DDA4D1 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5EE1F6768F100DDA4D1 /* MASViewConstraint.m */; };
-		18C5F6001F6768F100DDA4D1 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5F01F6768F100DDA4D1 /* NSArray+MASAdditions.m */; };
-		18C5F6011F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5F31F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		18C5F6021F6768F100DDA4D1 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5F51F6768F100DDA4D1 /* View+MASAdditions.m */; };
-		18C5F6031F6768F100DDA4D1 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F5F81F6768F100DDA4D1 /* ViewController+MASAdditions.m */; };
-		18C5F6121F6768FE00DDA4D1 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F6061F6768FE00DDA4D1 /* AFHTTPSessionManager.m */; };
-		18C5F6131F6768FE00DDA4D1 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F6091F6768FE00DDA4D1 /* AFNetworkReachabilityManager.m */; };
-		18C5F6141F6768FE00DDA4D1 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F60B1F6768FE00DDA4D1 /* AFSecurityPolicy.m */; };
-		18C5F6151F6768FE00DDA4D1 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F60D1F6768FE00DDA4D1 /* AFURLRequestSerialization.m */; };
-		18C5F6161F6768FE00DDA4D1 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F60F1F6768FE00DDA4D1 /* AFURLResponseSerialization.m */; };
-		18C5F6171F6768FE00DDA4D1 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F6111F6768FE00DDA4D1 /* AFURLSessionManager.m */; };
-		18C5F6221F676C7B00DDA4D1 /* mdh_video_tool_backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F6181F676C7B00DDA4D1 /* mdh_video_tool_backBtn.png */; };
-		18C5F6231F676C7B00DDA4D1 /* mdh_video_tool_backImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F6191F676C7B00DDA4D1 /* mdh_video_tool_backImage.png */; };
-		18C5F6241F676C7B00DDA4D1 /* mdh_video_tool_forwardImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F61A1F676C7B00DDA4D1 /* mdh_video_tool_forwardImage.png */; };
-		18C5F6251F676C7B00DDA4D1 /* mdh_video_tool_fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F61B1F676C7B00DDA4D1 /* mdh_video_tool_fullscreen.png */; };
-		18C5F6261F676C7B00DDA4D1 /* mdh_video_tool_pauseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F61C1F676C7B00DDA4D1 /* mdh_video_tool_pauseBtn.png */; };
-		18C5F6281F676C7B00DDA4D1 /* mdh_video_tool_playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F61E1F676C7B00DDA4D1 /* mdh_video_tool_playBtn.png */; };
-		18C5F6291F676C7B00DDA4D1 /* mdh_video_tool_replayBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F61F1F676C7B00DDA4D1 /* mdh_video_tool_replayBtn.png */; };
-		18C5F62A1F676C7B00DDA4D1 /* mdh_video_tool_shrinkscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F6201F676C7B00DDA4D1 /* mdh_video_tool_shrinkscreen.png */; };
-		18C5F62B1F676C7B00DDA4D1 /* mdh_video_tool_StartPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C5F6211F676C7B00DDA4D1 /* mdh_video_tool_StartPlay.png */; };
-		18C5F62E1F677E6900DDA4D1 /* MDHVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F62D1F677E6900DDA4D1 /* MDHVideoPlayerView.m */; };
-		18C5F6311F677EC400DDA4D1 /* MDHVideoToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F6301F677EC400DDA4D1 /* MDHVideoToolBar.m */; };
-		18C5F6371F6780B900DDA4D1 /* MDHVideoFastForwardBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F6361F6780B900DDA4D1 /* MDHVideoFastForwardBackView.m */; };
-		18C5F63A1F67815600DDA4D1 /* MDHVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F6391F67815600DDA4D1 /* MDHVideoControlView.m */; };
-		18C5F63D1F67867100DDA4D1 /* MDHVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5F63C1F67867100DDA4D1 /* MDHVideoDataModel.m */; };
+		18BDA5D32147B38D000C5915 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BDA5D22147B38D000C5915 /* PlayerViewController.m */; };
 		18C5F63F1F67CC7D00DDA4D1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C5F63E1F67CC7D00DDA4D1 /* CoreMedia.framework */; };
 		18CF9AA51F61747900287A76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9AA41F61747900287A76 /* main.m */; };
 		18CF9AA81F61747900287A76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9AA71F61747900287A76 /* AppDelegate.m */; };
@@ -73,69 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1894E2091F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_carat.mp4; sourceTree = "<group>"; };
-		1894E20A1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_clarity.mp4; sourceTree = "<group>"; };
-		1894E20B1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_color.mp4; sourceTree = "<group>"; };
-		1894E20C1F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tool_Public_GIA_cut.mp4; sourceTree = "<group>"; };
-		18C5F5D91F6672EB00DDA4D1 /* test_Video_0.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_Video_0.mp4; sourceTree = "<group>"; };
-		18C5F5DF1F6768F100DDA4D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18C5F5E01F6768F100DDA4D1 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
-		18C5F5E11F6768F100DDA4D1 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
-		18C5F5E21F6768F100DDA4D1 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
-		18C5F5E31F6768F100DDA4D1 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
-		18C5F5E41F6768F100DDA4D1 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
-		18C5F5E51F6768F100DDA4D1 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
-		18C5F5E61F6768F100DDA4D1 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
-		18C5F5E71F6768F100DDA4D1 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
-		18C5F5E81F6768F100DDA4D1 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
-		18C5F5E91F6768F100DDA4D1 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
-		18C5F5EA1F6768F100DDA4D1 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
-		18C5F5EB1F6768F100DDA4D1 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
-		18C5F5EC1F6768F100DDA4D1 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
-		18C5F5ED1F6768F100DDA4D1 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
-		18C5F5EE1F6768F100DDA4D1 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
-		18C5F5EF1F6768F100DDA4D1 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		18C5F5F01F6768F100DDA4D1 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		18C5F5F11F6768F100DDA4D1 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		18C5F5F21F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		18C5F5F31F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		18C5F5F41F6768F100DDA4D1 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
-		18C5F5F51F6768F100DDA4D1 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
-		18C5F5F61F6768F100DDA4D1 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		18C5F5F71F6768F100DDA4D1 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		18C5F5F81F6768F100DDA4D1 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		18C5F6051F6768FE00DDA4D1 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		18C5F6061F6768FE00DDA4D1 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		18C5F6071F6768FE00DDA4D1 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		18C5F6081F6768FE00DDA4D1 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		18C5F6091F6768FE00DDA4D1 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		18C5F60A1F6768FE00DDA4D1 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		18C5F60B1F6768FE00DDA4D1 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		18C5F60C1F6768FE00DDA4D1 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		18C5F60D1F6768FE00DDA4D1 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		18C5F60E1F6768FE00DDA4D1 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		18C5F60F1F6768FE00DDA4D1 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		18C5F6101F6768FE00DDA4D1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		18C5F6111F6768FE00DDA4D1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		18C5F6181F676C7B00DDA4D1 /* mdh_video_tool_backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_backBtn.png; sourceTree = "<group>"; };
-		18C5F6191F676C7B00DDA4D1 /* mdh_video_tool_backImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_backImage.png; sourceTree = "<group>"; };
-		18C5F61A1F676C7B00DDA4D1 /* mdh_video_tool_forwardImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_forwardImage.png; sourceTree = "<group>"; };
-		18C5F61B1F676C7B00DDA4D1 /* mdh_video_tool_fullscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_fullscreen.png; sourceTree = "<group>"; };
-		18C5F61C1F676C7B00DDA4D1 /* mdh_video_tool_pauseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_pauseBtn.png; sourceTree = "<group>"; };
-		18C5F61E1F676C7B00DDA4D1 /* mdh_video_tool_playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_playBtn.png; sourceTree = "<group>"; };
-		18C5F61F1F676C7B00DDA4D1 /* mdh_video_tool_replayBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_replayBtn.png; sourceTree = "<group>"; };
-		18C5F6201F676C7B00DDA4D1 /* mdh_video_tool_shrinkscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_shrinkscreen.png; sourceTree = "<group>"; };
-		18C5F6211F676C7B00DDA4D1 /* mdh_video_tool_StartPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdh_video_tool_StartPlay.png; sourceTree = "<group>"; };
-		18C5F62C1F677E6900DDA4D1 /* MDHVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHVideoPlayerView.h; sourceTree = "<group>"; };
-		18C5F62D1F677E6900DDA4D1 /* MDHVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHVideoPlayerView.m; sourceTree = "<group>"; };
-		18C5F62F1F677EC400DDA4D1 /* MDHVideoToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHVideoToolBar.h; sourceTree = "<group>"; };
-		18C5F6301F677EC400DDA4D1 /* MDHVideoToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHVideoToolBar.m; sourceTree = "<group>"; };
-		18C5F6351F6780B900DDA4D1 /* MDHVideoFastForwardBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHVideoFastForwardBackView.h; sourceTree = "<group>"; };
-		18C5F6361F6780B900DDA4D1 /* MDHVideoFastForwardBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHVideoFastForwardBackView.m; sourceTree = "<group>"; };
-		18C5F6381F67815600DDA4D1 /* MDHVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHVideoControlView.h; sourceTree = "<group>"; };
-		18C5F6391F67815600DDA4D1 /* MDHVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHVideoControlView.m; sourceTree = "<group>"; };
-		18C5F63B1F67867100DDA4D1 /* MDHVideoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHVideoDataModel.h; sourceTree = "<group>"; };
-		18C5F63C1F67867100DDA4D1 /* MDHVideoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHVideoDataModel.m; sourceTree = "<group>"; };
+		18BDA5D12147B38D000C5915 /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		18BDA5D22147B38D000C5915 /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		18C5F63E1F67CC7D00DDA4D1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18CF9AA01F61747900287A76 /* VideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF9AA41F61747900287A76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -183,75 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18683D8E1F6639C200CBE9D2 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				18C5F6181F676C7B00DDA4D1 /* mdh_video_tool_backBtn.png */,
-				18C5F6191F676C7B00DDA4D1 /* mdh_video_tool_backImage.png */,
-				18C5F61A1F676C7B00DDA4D1 /* mdh_video_tool_forwardImage.png */,
-				18C5F61B1F676C7B00DDA4D1 /* mdh_video_tool_fullscreen.png */,
-				18C5F61C1F676C7B00DDA4D1 /* mdh_video_tool_pauseBtn.png */,
-				18C5F61E1F676C7B00DDA4D1 /* mdh_video_tool_playBtn.png */,
-				18C5F61F1F676C7B00DDA4D1 /* mdh_video_tool_replayBtn.png */,
-				18C5F6201F676C7B00DDA4D1 /* mdh_video_tool_shrinkscreen.png */,
-				18C5F6211F676C7B00DDA4D1 /* mdh_video_tool_StartPlay.png */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		18C5F5DE1F6768F100DDA4D1 /* Masonry */ = {
-			isa = PBXGroup;
-			children = (
-				18C5F5DF1F6768F100DDA4D1 /* Info.plist */,
-				18C5F5E01F6768F100DDA4D1 /* MASCompositeConstraint.h */,
-				18C5F5E11F6768F100DDA4D1 /* MASCompositeConstraint.m */,
-				18C5F5E21F6768F100DDA4D1 /* MASConstraint+Private.h */,
-				18C5F5E31F6768F100DDA4D1 /* MASConstraint.h */,
-				18C5F5E41F6768F100DDA4D1 /* MASConstraint.m */,
-				18C5F5E51F6768F100DDA4D1 /* MASConstraintMaker.h */,
-				18C5F5E61F6768F100DDA4D1 /* MASConstraintMaker.m */,
-				18C5F5E71F6768F100DDA4D1 /* MASLayoutConstraint.h */,
-				18C5F5E81F6768F100DDA4D1 /* MASLayoutConstraint.m */,
-				18C5F5E91F6768F100DDA4D1 /* Masonry.h */,
-				18C5F5EA1F6768F100DDA4D1 /* MASUtilities.h */,
-				18C5F5EB1F6768F100DDA4D1 /* MASViewAttribute.h */,
-				18C5F5EC1F6768F100DDA4D1 /* MASViewAttribute.m */,
-				18C5F5ED1F6768F100DDA4D1 /* MASViewConstraint.h */,
-				18C5F5EE1F6768F100DDA4D1 /* MASViewConstraint.m */,
-				18C5F5EF1F6768F100DDA4D1 /* NSArray+MASAdditions.h */,
-				18C5F5F01F6768F100DDA4D1 /* NSArray+MASAdditions.m */,
-				18C5F5F11F6768F100DDA4D1 /* NSArray+MASShorthandAdditions.h */,
-				18C5F5F21F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.h */,
-				18C5F5F31F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.m */,
-				18C5F5F41F6768F100DDA4D1 /* View+MASAdditions.h */,
-				18C5F5F51F6768F100DDA4D1 /* View+MASAdditions.m */,
-				18C5F5F61F6768F100DDA4D1 /* View+MASShorthandAdditions.h */,
-				18C5F5F71F6768F100DDA4D1 /* ViewController+MASAdditions.h */,
-				18C5F5F81F6768F100DDA4D1 /* ViewController+MASAdditions.m */,
-			);
-			path = Masonry;
-			sourceTree = "<group>";
-		};
-		18C5F6041F6768FE00DDA4D1 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				18C5F6051F6768FE00DDA4D1 /* AFHTTPSessionManager.h */,
-				18C5F6061F6768FE00DDA4D1 /* AFHTTPSessionManager.m */,
-				18C5F6071F6768FE00DDA4D1 /* AFNetworking.h */,
-				18C5F6081F6768FE00DDA4D1 /* AFNetworkReachabilityManager.h */,
-				18C5F6091F6768FE00DDA4D1 /* AFNetworkReachabilityManager.m */,
-				18C5F60A1F6768FE00DDA4D1 /* AFSecurityPolicy.h */,
-				18C5F60B1F6768FE00DDA4D1 /* AFSecurityPolicy.m */,
-				18C5F60C1F6768FE00DDA4D1 /* AFURLRequestSerialization.h */,
-				18C5F60D1F6768FE00DDA4D1 /* AFURLRequestSerialization.m */,
-				18C5F60E1F6768FE00DDA4D1 /* AFURLResponseSerialization.h */,
-				18C5F60F1F6768FE00DDA4D1 /* AFURLResponseSerialization.m */,
-				18C5F6101F6768FE00DDA4D1 /* AFURLSessionManager.h */,
-				18C5F6111F6768FE00DDA4D1 /* AFURLSessionManager.m */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
 		18CF9A971F61747900287A76 = {
 			isa = PBXGroup;
 			children = (
@@ -276,28 +111,12 @@
 		18CF9AA21F61747900287A76 /* VideoDemo */ = {
 			isa = PBXGroup;
 			children = (
-				18C5F6041F6768FE00DDA4D1 /* AFNetworking */,
-				18C5F5DE1F6768F100DDA4D1 /* Masonry */,
-				18C5F5D91F6672EB00DDA4D1 /* test_Video_0.mp4 */,
-				1894E2091F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 */,
-				1894E20A1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 */,
-				1894E20B1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 */,
-				1894E20C1F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 */,
-				18683D8E1F6639C200CBE9D2 /* Resource */,
 				18CF9AA61F61747900287A76 /* AppDelegate.h */,
 				18CF9AA71F61747900287A76 /* AppDelegate.m */,
 				18CF9AA91F61747900287A76 /* ViewController.h */,
 				18CF9AAA1F61747900287A76 /* ViewController.m */,
-				18C5F63B1F67867100DDA4D1 /* MDHVideoDataModel.h */,
-				18C5F63C1F67867100DDA4D1 /* MDHVideoDataModel.m */,
-				18C5F62C1F677E6900DDA4D1 /* MDHVideoPlayerView.h */,
-				18C5F62D1F677E6900DDA4D1 /* MDHVideoPlayerView.m */,
-				18C5F6381F67815600DDA4D1 /* MDHVideoControlView.h */,
-				18C5F6391F67815600DDA4D1 /* MDHVideoControlView.m */,
-				18C5F62F1F677EC400DDA4D1 /* MDHVideoToolBar.h */,
-				18C5F6301F677EC400DDA4D1 /* MDHVideoToolBar.m */,
-				18C5F6351F6780B900DDA4D1 /* MDHVideoFastForwardBackView.h */,
-				18C5F6361F6780B900DDA4D1 /* MDHVideoFastForwardBackView.m */,
+				18BDA5D12147B38D000C5915 /* PlayerViewController.h */,
+				18BDA5D22147B38D000C5915 /* PlayerViewController.m */,
 				18CF9AAC1F61747900287A76 /* Main.storyboard */,
 				18CF9AAF1F61747900287A76 /* Assets.xcassets */,
 				18CF9AB11F61747900287A76 /* LaunchScreen.storyboard */,
@@ -409,8 +228,8 @@
 				TargetAttributes = {
 					18CF9A9F1F61747900287A76 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = W2M7APU8R5;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 5DRT67KVU3;
+						ProvisioningStyle = Manual;
 					};
 					18CF9AB81F61747900287A76 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -451,23 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C5F5DA1F6672EB00DDA4D1 /* test_Video_0.mp4 in Resources */,
-				1894E2101F68D73000BC5597 /* Tool_Public_GIA_cut.mp4 in Resources */,
-				18C5F62A1F676C7B00DDA4D1 /* mdh_video_tool_shrinkscreen.png in Resources */,
-				18C5F6251F676C7B00DDA4D1 /* mdh_video_tool_fullscreen.png in Resources */,
-				18C5F6291F676C7B00DDA4D1 /* mdh_video_tool_replayBtn.png in Resources */,
-				18C5F6221F676C7B00DDA4D1 /* mdh_video_tool_backBtn.png in Resources */,
 				18CF9AB31F61747900287A76 /* LaunchScreen.storyboard in Resources */,
-				18C5F6231F676C7B00DDA4D1 /* mdh_video_tool_backImage.png in Resources */,
 				18CF9AB01F61747900287A76 /* Assets.xcassets in Resources */,
-				18C5F6241F676C7B00DDA4D1 /* mdh_video_tool_forwardImage.png in Resources */,
-				18C5F6261F676C7B00DDA4D1 /* mdh_video_tool_pauseBtn.png in Resources */,
-				1894E20F1F68D73000BC5597 /* Tool_Public_GIA_color.mp4 in Resources */,
-				1894E20D1F68D73000BC5597 /* Tool_Public_GIA_carat.mp4 in Resources */,
-				18C5F5F91F6768F100DDA4D1 /* Info.plist in Resources */,
-				18C5F62B1F676C7B00DDA4D1 /* mdh_video_tool_StartPlay.png in Resources */,
-				1894E20E1F68D73000BC5597 /* Tool_Public_GIA_clarity.mp4 in Resources */,
-				18C5F6281F676C7B00DDA4D1 /* mdh_video_tool_playBtn.png in Resources */,
 				18CF9AAE1F61747900287A76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,30 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C5F63A1F67815600DDA4D1 /* MDHVideoControlView.m in Sources */,
-				18C5F6011F6768F100DDA4D1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				18CF9AAB1F61747900287A76 /* ViewController.m in Sources */,
-				18C5F5FF1F6768F100DDA4D1 /* MASViewConstraint.m in Sources */,
-				18C5F6171F6768FE00DDA4D1 /* AFURLSessionManager.m in Sources */,
+				18BDA5D32147B38D000C5915 /* PlayerViewController.m in Sources */,
 				18CF9AA81F61747900287A76 /* AppDelegate.m in Sources */,
 				18CF9AA51F61747900287A76 /* main.m in Sources */,
-				18C5F6021F6768F100DDA4D1 /* View+MASAdditions.m in Sources */,
-				18C5F6121F6768FE00DDA4D1 /* AFHTTPSessionManager.m in Sources */,
-				18C5F62E1F677E6900DDA4D1 /* MDHVideoPlayerView.m in Sources */,
-				18C5F5FA1F6768F100DDA4D1 /* MASCompositeConstraint.m in Sources */,
-				18C5F5FE1F6768F100DDA4D1 /* MASViewAttribute.m in Sources */,
-				18C5F6311F677EC400DDA4D1 /* MDHVideoToolBar.m in Sources */,
-				18C5F6141F6768FE00DDA4D1 /* AFSecurityPolicy.m in Sources */,
-				18C5F63D1F67867100DDA4D1 /* MDHVideoDataModel.m in Sources */,
-				18C5F5FC1F6768F100DDA4D1 /* MASConstraintMaker.m in Sources */,
-				18C5F6151F6768FE00DDA4D1 /* AFURLRequestSerialization.m in Sources */,
-				18C5F6131F6768FE00DDA4D1 /* AFNetworkReachabilityManager.m in Sources */,
-				18C5F6161F6768FE00DDA4D1 /* AFURLResponseSerialization.m in Sources */,
-				18C5F6001F6768F100DDA4D1 /* NSArray+MASAdditions.m in Sources */,
-				18C5F6031F6768F100DDA4D1 /* ViewController+MASAdditions.m in Sources */,
-				18C5F5FB1F6768F100DDA4D1 /* MASConstraint.m in Sources */,
-				18C5F5FD1F6768F100DDA4D1 /* MASLayoutConstraint.m in Sources */,
-				18C5F6371F6780B900DDA4D1 /* MDHVideoFastForwardBackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,13 +454,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W2M7APU8R5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5DRT67KVU3;
 				INFOPLIST_FILE = VideoDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ellassay.VideoDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hfeducation.VideoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "050a1e45-2c75-4883-a67e-af59e694cbad";
+				PROVISIONING_PROFILE_SPECIFIER = PublicDevelopment;
 			};
 			name = Debug;
 		};
@@ -685,11 +471,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W2M7APU8R5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VideoDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ellassay.VideoDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hfeducation.VideoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
