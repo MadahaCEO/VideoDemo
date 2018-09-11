@@ -62,6 +62,9 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+        
+    
+    
     PlayerViewController *playerVC = [[PlayerViewController alloc] init];
 //    [self presentViewController:playerVC animated:YES completion:nil];
     [self.navigationController pushViewController:playerVC animated:YES];
