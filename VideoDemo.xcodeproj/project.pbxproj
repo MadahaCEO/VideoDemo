@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18BDA5D32147B38D000C5915 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BDA5D22147B38D000C5915 /* PlayerViewController.m */; };
+		18BDA647215128CF000C5915 /* MDHSearchWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BDA646215128CF000C5915 /* MDHSearchWords.m */; };
 		18C5F63F1F67CC7D00DDA4D1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C5F63E1F67CC7D00DDA4D1 /* CoreMedia.framework */; };
 		18CF9AA51F61747900287A76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9AA41F61747900287A76 /* main.m */; };
 		18CF9AA81F61747900287A76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9AA71F61747900287A76 /* AppDelegate.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		18BDA5D12147B38D000C5915 /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		18BDA5D22147B38D000C5915 /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		18BDA645215128CF000C5915 /* MDHSearchWords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDHSearchWords.h; sourceTree = "<group>"; };
+		18BDA646215128CF000C5915 /* MDHSearchWords.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDHSearchWords.m; sourceTree = "<group>"; };
 		18C5F63E1F67CC7D00DDA4D1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18CF9AA01F61747900287A76 /* VideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF9AA41F61747900287A76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				18CF9AA71F61747900287A76 /* AppDelegate.m */,
 				18CF9AA91F61747900287A76 /* ViewController.h */,
 				18CF9AAA1F61747900287A76 /* ViewController.m */,
+				18BDA645215128CF000C5915 /* MDHSearchWords.h */,
+				18BDA646215128CF000C5915 /* MDHSearchWords.m */,
 				18BDA5D12147B38D000C5915 /* PlayerViewController.h */,
 				18BDA5D22147B38D000C5915 /* PlayerViewController.m */,
 				18CF9AAC1F61747900287A76 /* Main.storyboard */,
@@ -300,6 +305,7 @@
 				18CF9AAB1F61747900287A76 /* ViewController.m in Sources */,
 				18BDA5D32147B38D000C5915 /* PlayerViewController.m in Sources */,
 				18CF9AA81F61747900287A76 /* AppDelegate.m in Sources */,
+				18BDA647215128CF000C5915 /* MDHSearchWords.m in Sources */,
 				18CF9AA51F61747900287A76 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PlayerViewController.h"
+#import "MDHSearchWords.h"
 
 @interface ViewController ()
 
@@ -57,6 +58,11 @@
     [self.view addSubview:self.currentTimeLabel];
     
     
+    
+    MDHSearchWords *searchWords = [[MDHSearchWords alloc] init];
+    searchWords.options = SearchWordsOptions_You|SearchWordsOptions_Me|SearchWordsOptions_He;
+    
+    [searchWords searchKeyWords];
 }
 
 

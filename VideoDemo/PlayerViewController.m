@@ -34,8 +34,8 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @property (nonatomic, strong) UIProgressView  *bufferProgressView;
 
 @property (nonatomic, strong) AVURLAsset     *urlAsset;
-@property (nonatomic, strong) AVPlayer       *player;
 @property (nonatomic, strong) AVPlayerItem   *playerItem;
+@property (nonatomic, strong) AVPlayer       *player;
 @property (nonatomic, strong) AVPlayerLayer  *playerLayer;
 
 @property (nonatomic, assign) NSTimeInterval currentTime;
@@ -126,9 +126,9 @@ static NSString *const kPresentationSize         = @"presentationSize";
     /*
      //注意更改播放速度要在视频开始播放之后才会生效
      相当于视频快进，加速播放，说话速度特别快。
-     */
+     
     self.player.rate = 1.5;
-
+*/
 }
 
 - (void)pause {
@@ -139,7 +139,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 }
 
 - (void)stop {
-    
+
 }
 
 
@@ -269,11 +269,17 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 - (void)addKVO {
    
+    /*
+     播放状态：
+     
+     */
     [self.playerItem addObserver: self
                       forKeyPath: kStatus
                          options: NSKeyValueObservingOptionNew
                          context: nil];
    
+    /*
+     */
     [self.playerItem addObserver: self
                       forKeyPath: kPlaybackBufferEmpty
                          options: NSKeyValueObservingOptionNew
@@ -500,9 +506,22 @@ static NSString *const kPresentationSize         = @"presentationSize";
     
     
     if (@available(iOS 9.0, *)) {
+        /*
+         新属性canUseNetworkResourcesForLiveStreamingWhilePaused， iOS9系统以前默认开启，iOS9默认关闭，
+         如果需要减少性能消耗，在视频流暂停的时候，如果不需要使用播放状态可以把这个属性设为关闭。
+         */
         self.playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = NO;
     }
     if (@available(iOS 10.0, *)) {
+        
+        /*
+         preferredForwardBufferDuration
+         播放之前先缓存一段时间
+         
+         automaticallyWaitsToMinimizeStalling
+         当播放HLS媒体时,  automaticallyWaitsToMinimizeStalling 的值为 true.
+         当播放基于文件的媒体, 包括逐渐下载的内容,  automaticallyWaitsToMinimizeStalling 的值为 false.
+         */
         self.playerItem.preferredForwardBufferDuration = 1;
         self.player.automaticallyWaitsToMinimizeStalling = NO;
     }
